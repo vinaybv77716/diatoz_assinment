@@ -8,8 +8,8 @@ jobs:
     runs-on: self-hosted
     steps:
      - name: Check out the repo
-      # run: rm -rf diatoz_assinment
-       run: echo "code exists"
+       run: rm -rf diatoz_assinment && git clone https://github.com/vinaybv77716/diatoz_assinment.git
+       #run: echo "code exists"
      - name: Set Relase version
        id: vars
        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
