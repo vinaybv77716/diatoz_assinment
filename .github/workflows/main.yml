@@ -9,7 +9,7 @@ jobs:
     steps:
      - name: Check out the repo
       # run: rm -rf diatoz_assinment
-       run: git clone https://github.com/vinaybv77716/diatoz_assinment.git -b main
+       run: echo "code exists"
      - name: Set Relase version
        id: vars
        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
