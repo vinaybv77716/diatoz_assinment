@@ -15,7 +15,7 @@ jobs:
      - name: build docker image and push to ecr repo
        run: |
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 890405391444.dkr.ecr.us-east-1.amazonaws.com
-          docker build -t nodeproj .
+          docker build -t nodeproj diatoz_assinment/.
           ls
           docker --version
           docker tag nodeproj:latest 890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeproj:latest
