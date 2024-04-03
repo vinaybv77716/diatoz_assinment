@@ -8,7 +8,7 @@ jobs:
     runs-on: self-hosted
     steps:
      - name: Check out the repo
-       run: rm -rf diatoz_assinment
+      # run: rm -rf diatoz_assinment
        run: git clone https://github.com/vinaybv77716/diatoz_assinment.git -b main
      - name: Set Relase version
        id: vars
