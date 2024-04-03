@@ -16,12 +16,12 @@ jobs:
      - name: build docker image and push to ecr repo
        run: |
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 890405391444.dkr.ecr.us-east-1.amazonaws.com
-          docker build -t nodeproj diatoz_assinment/.
+          docker build -t nodeapp diatoz_assinment/.
           ls
           pwd
           docker --version
-          docker tag nodeproj:latest 890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeproj:latest
-          docker push 890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeproj:latest
+          docker tag nodeapp:latest 890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeapp:latest
+          docker push 890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeapp:latest
        env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
