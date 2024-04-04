@@ -10,11 +10,11 @@ data "template_file" "cb_app" {
 
   vars = {
     app_image      = "890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeproj"
-    app_port       = var.app_port
-    fargate_cpu    = var.fargate_cpu
-    fargate_memory = var.fargate_memory
-    aws_region     = var.aws_region
-    tag            = var.tag
+    app_port       = var.app_port #8080
+    fargate_cpu    = var.fargate_cpu  #1024
+    fargate_memory = var.fargate_memory  #2048
+    aws_region     = var.aws_region  #us-east-1
+    tag            = var.tag  # latest
   }
 }
 
@@ -32,7 +32,7 @@ resource "aws_ecs_service" "main" {
   name            = "vinay-service1"
   cluster         = aws_ecs_cluster.main.id
   task_definition = aws_ecs_task_definition.app.arn
-  desired_count   = var.app_count
+  desired_count   = var.app_count #2
   launch_type     = "FARGATE"
 
   network_configuration {
