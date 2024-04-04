@@ -29,7 +29,7 @@ resource "aws_internet_gateway" "gw" {
 
 # Route the public subnet traffic through the IGW
 resource "aws_route" "internet_access" {
-  route_table_id         = aws_vpc.main.main_route_table_id
+  route_table_id         = aws_vpc.main.main_route_table_id   # The main rout tbele is associated with all subnets in vpc
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.gw.id
 }

@@ -42,4 +42,6 @@ variable "fargate_memory" {
   default     = "2048"
 }
 variable "tag" {
+  description="image should be the latest version"
+  default="latest"
 }

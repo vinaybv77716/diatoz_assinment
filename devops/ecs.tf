@@ -1,3 +1,4 @@
+#Creating ECS Cluster
 resource "aws_ecs_cluster" "main" {
   name = "vinay-cluster"
 }
