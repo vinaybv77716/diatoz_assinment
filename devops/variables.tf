@@ -1,6 +1,6 @@
 variable "aws_region" {
   description = "The AWS region things are created in"
-  default     = "ap-south-1"
+  default     = "us-east-1"
 }
 
 variable "ecs_task_execution_role_name" {
@@ -15,7 +15,7 @@ variable "ecs_auto_scale_role_name" {
 
 variable "az_count" {
   description = "Number of AZs to cover in a given region"
-  default     = "2"
+  default     = "1"
 }
 
 variable "app_port" {
@@ -25,7 +25,7 @@ variable "app_port" {
 
 variable "app_count" {
   description = "Number of docker containers to run"
-  default     = 2
+  default     = 1
 }
 
 variable "health_check_path" {
