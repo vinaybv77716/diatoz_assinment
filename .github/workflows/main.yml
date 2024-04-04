@@ -14,6 +14,7 @@ jobs:
        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
      - name: build docker image and push to ecr repo
        run: |
+          sudo chown $USER /var/run/docker.sock
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 890405391444.dkr.ecr.us-east-1.amazonaws.com
           docker build -t nodeproj diatoz_assinment/.
           ls
