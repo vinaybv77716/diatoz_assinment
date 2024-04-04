@@ -8,7 +8,7 @@ data "template_file" "cb_app" {
   template = file("./templates/ecs/cb_app.json.tpl")
 
   vars = {
-    app_image      = "890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeproj"
+    app_image      = "890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeproj:latest"
     app_port       = var.app_port
     fargate_cpu    = var.fargate_cpu
     fargate_memory = var.fargate_memory
