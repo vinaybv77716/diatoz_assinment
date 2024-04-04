@@ -1,14 +1,14 @@
 resource "aws_ecs_cluster" "main" {
   name = "vinay-cluster"
 }
-data "aws_ecr_repository" "nodeapp"{
-name = "nodeproj"
-}
+#data "aws_ecr_repository" "nodeapp"{
+#name = "nodeproj"
+#}
 data "template_file" "cb_app" {
   template = file("./templates/ecs/cb_app.json.tpl")
 
   vars = {
-    app_image      = data.aws_ecr_repository.nodeapp.repository_url
+    app_image      = "890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeproj:latest"
     app_port       = var.app_port
     fargate_cpu    = var.fargate_cpu
     fargate_memory = var.fargate_memory
