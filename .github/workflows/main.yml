@@ -36,6 +36,6 @@ jobs:
      - name: terraform initialization 
        run: cd /home/ubuntu/actions-runner/main.tf/diatoz_assinment/diatoz_assinment/diatoz_assinment/devops/ && terraform init 
      - name: terraform deployment
-       run: cd /home/ubuntu/actions-runner/main.tf/diatoz_assinment/diatoz_assinment/diatoz_assinment/devops/ && terraform apply -var="tag=${{ env.RELEASE_VERSION }}"  -auto-approve
+       run: cd /home/ubuntu/actions-runner/main.tf/diatoz_assinment/diatoz_assinment/diatoz_assinment/devops/ && terraform apply -var="tag=latest"  -auto-approve
 
      
