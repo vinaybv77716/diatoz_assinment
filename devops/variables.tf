@@ -15,7 +15,7 @@ variable "ecs_auto_scale_role_name" {
 
 variable "az_count" {
   description = "Number of AZs to cover in a given region"
-  default     = "1"
+  default     = "2"
 }
 
 variable "app_port" {
@@ -25,7 +25,7 @@ variable "app_port" {
 
 variable "app_count" {
   description = "Number of docker containers to run"
-  default     = 1
+  default     = 2
 }
 
 variable "health_check_path" {
