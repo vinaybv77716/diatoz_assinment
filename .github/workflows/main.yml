@@ -15,8 +15,6 @@ jobs:
           sudo chown $USER /var/run/docker.sock
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 890405391444.dkr.ecr.us-east-1.amazonaws.com
           docker build -t nodeproj diatoz_assinment/.
-          ls
-          pwd
           docker tag nodeproj:latest 890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeproj:latest
           docker push 890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeproj:latest
        env:
@@ -24,8 +22,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
      - name: terraform initialization 
-       run: cd /home/ubuntu/actions-runner/main.tf/diatoz_assinment/diatoz_assinment/diatoz_assinment/devops/ && terraform init 
+       run: cd /home/ubuntu/actions-runner/_work/diatoz_assinment/diatoz_assinment/diatoz_assinment/devops/ && terraform init 
      - name: terraform deployment
-       run: cd /home/ubuntu/actions-runner/main.tf/diatoz_assinment/diatoz_assinment/diatoz_assinment/devops/ && terraform apply -var="tag=latest"  -auto-approve
+       run: cd /home/ubuntu/actions-runner/_work/diatoz_assinment/diatoz_assinment/diatoz_assinment/devops/ && terraform apply -var="tag=latest"  -auto-approve
 
      
