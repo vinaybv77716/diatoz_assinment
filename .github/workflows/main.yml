@@ -15,6 +15,8 @@ jobs:
           sudo chown $USER /var/run/docker.sock
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 890405391444.dkr.ecr.us-east-1.amazonaws.com
           docker build -t nodeproj diatoz_assinment/.
+          ls
+          pwd
           docker tag nodeproj:latest 890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeproj:latest
           docker push 890405391444.dkr.ecr.us-east-1.amazonaws.com/nodeproj:latest
        env:
